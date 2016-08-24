@@ -21,7 +21,7 @@ oses:
         etcd2:
             listen-client-urls: http://0.0.0.0:2379,http://0.0.0.0:4001
             advertise-client-urls: http://0.0.0.0:2379,http://0.0.0.0:4001
-            initial-cluster: master=http://<%= @host.params['k8s_master'] %>:2380
+            initial-cluster: master=<%= @host.params['k8s_master'] %>:2380
             proxy: on
         units:
           - name: fleet.service
